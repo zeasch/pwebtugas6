@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+
+    <link rel="stylesheet" type="text/css" href="send-message-style.css">
+    <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+    <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+    <link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+    <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="wrap">
+            <form class="contact-form" name="form-message" action="thank-you.html" onsubmit="return validateForm()" method="post">
+                <div class="contact-form-title">
+                    LEAVE US A MESSAGE
+                </div>
+
+                <div class="wrap-input">
+                    <div class="label-input">Name</div>
+                    <input class="input" type="text" name="nama" placeholder="Enter your name">
+                    <div class="focus-input"></div>
+                </div>
+
+                <div class="wrap-input">
+                    <div class="label-input">Email</div>
+                    <input class="input" id="email" type="text" name="email" placeholder="Enter your email address">
+                    <div class="focus-input"></div>
+                </div>
+
+                <div class="wrap-input">
+                    <div class="label-input">Phone Number</div>
+                    <input class="input" type="text" name="phone" placeholder="Enter your phone number">
+                    <div class="focus-input"></div>
+                </div>
+
+                <div class="wrap-input">
+                    <div class="label-input">Message</div>
+                    <textarea class="input" name="message" placeholder="Your message here"></textarea>
+                    <div class="focus-input"></div>
+                </div>
+
+                <div class="container-contact-form-button">
+                    <div class="wrap-contact-form-button">
+                        <div class="contact-form-bgbtn"></div>
+                        <button class="contact-form-btn">
+                            Send Message
+                            <i class="fa fa-long-arrow-right" style="margin-left: 7px;" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function validateForm() {
+            if (document.forms["form-message"]["nama"].value == "") {
+                alert("Enter name!");
+                document.forms["form-message"]["nama"].focus();
+                return false;
+			}
+            if (document.forms["form-message"]["email"].value != "") {
+                var mail = document.forms["form-message"]["email"].value;
+                if (!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail)))
+                {
+                    alert("You have entered an invalid email address!");
+                    document.forms["form-message"]["email"].focus();
+                    return false;
+                }   
+            }
+            if (document.forms["form-message"]["email"].value == "") {
+                alert("Enter email!");
+                document.forms["form-message"]["email"].focus();
+                return false;
+            }
+            if (document.forms["form-message"]["phone"].value != "") {
+                var number = document.forms["form-message"]["phone"].value;
+                if (isNaN(number)) 
+                {
+                    alert("Must input numbers!");
+                    document.forms["form-message"]["phone"].focus();
+                    return false;
+                }
+            }
+			if (document.forms["form-message"]["phone"].value == "") {
+                alert("Enter phone number!");
+                document.forms["form-message"]["phone"].focus();
+                return false;
+			}
+            if (document.forms["form-message"]["message"].value == "") {
+                alert("Enter message!");
+                document.forms["form-message"]["message"].focus();
+                return false;
+			}
+		}
+
+    </script>
+</body>
+</html>
