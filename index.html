@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Sign In</title>
+
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+</head>
+<body>
+
+	<div class="container">
+		<div class="wrap">
+			<form class="login-form" name="form-login" onsubmit="return validateForm()" method="post">
+				<div class="login-form-title">
+					SIGN IN
+				</div>
+
+				<div class="wrap-input" style="margin-bottom: 20px;">
+					<input class="input" type="text" name="username" placeholder="username">
+					<div class="focus-input"></div>
+				</div>
+
+				<div class="wrap-input" style="margin-bottom: 25px;">
+					<input class="input" type="password" name="password" placeholder="password">
+					<div class="focus-input"></div>
+				</div>
+
+				<div class="container-login-form-btn">
+					<button class="login-form-btn">
+						Sign In
+					</button>
+				</div>
+
+				<div class="text-center"></div>
+			</form>
+		</div>
+	</div>
+
+	<script>
+		function validateForm() {
+                if (document.forms["form-login"]["username"].value == "") {
+                    alert("Enter username!");
+                    document.forms["form-login"]["username"].focus();
+                    return false;
+				}
+				if (document.forms["form-login"]["password"].value == "") {
+                    alert("Enter password!");
+                    document.forms["form-login"]["password"].focus();
+                    return false;
+				}
+		}
+	</script>
+</body>
+</html>
